@@ -10,13 +10,12 @@ define('APP_PATH', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/");
 define('UPLOADS_DIR', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/uploads/");
 
 // Archivos permitidos
-$allowed_files = array('jpg', 'jpeg', 'png', 'gif', 'pdf');
-
-// Función de verificación de archivos
-function is_filetype_allowed($filename) {
-    global $allowed_files;
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    return in_array(strtolower($ext), $allowed_files);
-}
-
-?>
+$CONTENT_TYPEX_EXT = [
+    "jpg" => "image/jpeg",
+    "jpeg" => "image/jpeg",
+    "gif" => "image/gif",
+    "png" => "image/png",
+    "json" => "application/json",
+    "pdf" => "application/pdf",
+    "bin" => "application/octet-stream"
+];

@@ -1,73 +1,55 @@
 <?php
+session_start();
 
-// Importacion de archivo de configuración PHP
-include_once 'config.php';
 require_once 'login_helper.php';
 
-$tituloPagina = "Manejador de archivos"; // Variable para el título de la página (Sólo se usa una vez)
-
-// Verifica que el usuario esté autenticado
-if(!isset($_SESSION['user'])) {
-    header('Location: login.php');
+if (isset($_SESSION['user'])) {
+    header('Location: index.php');
     exit;
 }
 
-$user = $_SESSION['user'];
-$esAdmin = $user['esAdmin'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-// Directorio para almacenamiento de archivos.
-$directorio = "uploads/";
-$archivos = array_diff(scandir($directorio), array('..', '.'));
+    $user = autentificar($username, $password);
 
+    if ($user) {
+        $_SESSION['user'] = $user;
+        header('Location: index.php');
+        exit;
+    } else {
+        $error = "Usuario o contraseña incorrectos.";
+    }
+}
 ?>
-
-<!--Este archivo se llama login pero es el index de la aplicación, esto debido a problemas con xampp-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="<?=APP_ROOT?>css/styles.css" rel="stylesheet" type="text/css" /> 
-    <title><?php echo $tituloPagina; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+<div class="container">
+    <h1>Iniciar Sesión</h1>
+    <?php if (isset($error)) echo "<p>$error</p>"; ?>
+    <form id="iguales" action="login.php" method="post" class="login-form">
 
-    <div class="header">
-        <h1><?php echo $tituloPagina; ?></h1>
+    <div class="input-group">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" class="input-field">
     </div>
-    
-    <div class="header-container">
-        <!-- Mario bros div-->
-        <div class="brick one"></div>
-        <div class="tooltip-mario-container">
-            <div class="box"></div>
-            <div class="mush"></div>
-        </div>
-        <div class="brick two"></div>
-        <!-- End mario bros div-->
+    <div class="input-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" class="input-field">
     </div>
-
-    <div class="row">
-
-        <div class="leftcolumn">
-            <div id="subir-archivo" class="card">
-                <?php if($esAdmin)?>
-                <h2>Subir archivo</h2>
-                <ul>
-                    <li>Imágenes: jpg, jpeg, png, gif</li>
-                    <li>Documentos: pdf</li>
-                </ul>
-                <form action="subir_archivo.php" method="post" enctype="multipart/form-data">
-                <button>
-                    <span class="transition"></span>
-                    <span class="gradient"></span>
-                    <span class="label">Subir archivo</span>
-                </button>
-            </div>
-
-        </div> <!-- leftcolumn -->        
-
+    <br>
+    <input type="submit" value="Iniciar Sesión" class="submit-button">
+    </form>
+</div>
 
 </body>
 </html>

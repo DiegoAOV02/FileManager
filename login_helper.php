@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $USERS = [
     [
@@ -68,5 +68,3 @@ function autentificar($username, $password) {
         "esAdmin" => $user["esAdmin"]
     ];
 }
-
-?>
