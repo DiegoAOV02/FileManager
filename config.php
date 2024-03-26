@@ -1,10 +1,13 @@
 <?php
 
-// Ruta de la aplicación.
-define('APP_PATH', "/FileManager/");
+// ROOT DE LA APLICACIÓN
+define('APP_ROOT', "/FileManager/");
+
+// RUTA FÍSICA DE LA APLICACIÓN
+define('APP_PATH', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/");
 
 // Ruta de almacenamiento de archivos
-define('UPLOADS_DIR', __DIR__ . '/uploads');
+define('UPLOADS_DIR', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/uploads/");
 
 // Archivos permitidos
 $allowed_files = array('jpg', 'jpeg', 'png', 'gif', 'pdf');
