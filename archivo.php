@@ -35,7 +35,6 @@ header("Content-Length: $tamaño");
 
 // Enviamos el archivo como respuesta.
 readfile($rutaArchivo);
-//echo file_get_contents($rutaArchivo);  // Otra forma de regresar archivo como respuesta.
 
 // Verificar si se proporcionó el nombre del archivo
 if (!isset($_GET['nombre'])) {

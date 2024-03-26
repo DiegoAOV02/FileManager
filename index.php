@@ -12,7 +12,7 @@ $user = $_SESSION['user'];
 $esAdmin = $user['esAdmin'];
 
 // Directorio donde se almacenan los archivos
-$directorio = "uploads/";
+$directorio = "archivos/";
 $archivos = array_diff(scandir($directorio), array('..', '.'));
 
 ?>
@@ -23,7 +23,7 @@ $archivos = array_diff(scandir($directorio), array('..', '.'));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador de Archivos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">

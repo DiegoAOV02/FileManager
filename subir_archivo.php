@@ -25,7 +25,7 @@ if (isset($_FILES['file'])) {
         die("Error: Solo se permiten archivos de Imagen y PDF.");
     }
 
-    // El archivo no puede tener el mismo nombre que otro, mandar advertencia (cambiar a un recuadro (? no olvidar))
+    // El archivo no puede tener el mismo nombre que otro, mandar advertencia
     if (file_exists($directorio . $nombreGuardado)) {
         echo "Advertencia: Ya existe un archivo con el nombre '$nombreGuardado'. Por favor, cambie el nombre del archivo.";
     } else {

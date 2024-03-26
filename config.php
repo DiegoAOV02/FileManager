@@ -7,7 +7,7 @@ define('APP_ROOT', "/FileManager/");
 define('APP_PATH', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/");
 
 // Ruta de almacenamiento de archivos
-define('UPLOADS_DIR', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/uploads/");
+define('UPLOADS_DIR', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/archivos/");
 
 // Archivos permitidos
 $CONTENT_TYPEX_EXT = [
