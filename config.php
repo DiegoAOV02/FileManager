@@ -1,7 +1,7 @@
 <?php
 
 // ROOT DE LA APLICACIÓN
-define('APP_ROOT', "/FileManager/");
+define('APP_ROOT', "/FileManager/login.php");
 
 // RUTA FÍSICA DE LA APLICACIÓN
 define('APP_PATH', "/Applications/XAMPP/xamppfiles/htdocs/FileManager/");
