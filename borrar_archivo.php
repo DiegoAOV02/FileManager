@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit;
 }
-$directorio = "uploads/";
+$directorio = "archivos/";
 
 if (isset($_GET['archivo'])) {
     $archivo = $_GET['archivo'];

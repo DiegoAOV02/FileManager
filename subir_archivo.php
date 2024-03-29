@@ -9,6 +9,11 @@ if (!isset($_SESSION['user'])) {
 $user = $_SESSION['user'];
 $esAdmin = $user['esAdmin'];
 
+// Para que el folder de archivos pueda ser manipulable, es necesario darle los permisos con los siguientes comandos:
+/* 
+    chmod -R 777 archivos/ 
+*/
+
 $directorio = "archivos/";
 
 // Verificar si se ha enviado un archivo
@@ -18,11 +23,11 @@ if (isset($_FILES['file'])) {
     $tamañoArchivo = $_FILES['file']['size'];
     $nombreGuardado = isset($_POST['nombre']) && !empty($_POST['nombre']) ? $_POST['nombre'] : $nombreArchivo;
 
-    // Validar que sea el tipo de archivo que se permite !
+    // Validar que sea el tipo de archivo que se permite
     $extension = strtolower(pathinfo($nombreArchivo, PATHINFO_EXTENSION));
     $permitidos = array('jpg', 'jpeg', 'png', 'gif', 'pdf');
     if (!in_array($extension, $permitidos)) {
-        die("Error: Solo se permiten archivos de Imagen y PDF.");
+        echo ("Error: Solo se permiten archivos de Imagen y PDF.");
     }
 
     // El archivo no puede tener el mismo nombre que otro, mandar advertencia
@@ -34,7 +39,7 @@ if (isset($_FILES['file'])) {
             header('Location: index.php');
             exit;
         } else {
-            echo "Error al subir el archivo.";
+            echo "Error no se subió correctamente el archivo.";
         }
     }
 }

@@ -77,7 +77,7 @@ a:hover {
 }
 
 .delete-button:hover {
-  background-color: #da0a76;
+  background-color: #124076;
 }
 
 table {
@@ -108,7 +108,7 @@ th {
 }
 
 .logout-button:hover {
-  background-color: #b3007d;
+  background-color: #124076;
 }
 
 .file-input-container,
@@ -136,7 +136,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #007bff; 
+  background-color: #124076; 
   
 }
 .login-form {
