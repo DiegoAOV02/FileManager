@@ -1,12 +1,12 @@
 body {
-  background-color: #c9959e;
+  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  background-color: #c9959e;
+  background-color: #fff;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -38,7 +38,7 @@ input[type="text"] {
 input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #fea9e3;
+  background-color: #007bff;
   color: #201e20;
   border: none;
   border-radius: 5px;
@@ -46,7 +46,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #fc43a3;
+  background-color: #007bff;
 }
 
 ul {
@@ -60,16 +60,16 @@ ul li {
 
 a {
   text-decoration: none;
-  color: #ff00a2;
+  color: #007bff;
 }
 
 a:hover {
-  color: #e9c8dd;
+  color: #007bff;
 }
 
 
 .delete-button {
-  background-color: #e82b8d;
+  background-color: #007bff;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -96,7 +96,7 @@ th {
 }
 
 .logout-button {
-  background-color: #e82b8d;
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -128,7 +128,7 @@ input[type="text"],
 }
 
 input[type="submit"] {
-  background-color: #ff69b4;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -136,7 +136,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #ff4f9d; 
+  background-color: #007bff; 
   
 }
 .login-form {
@@ -167,7 +167,7 @@ input[type="submit"]:hover {
 .submit-button {
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -175,5 +175,5 @@ input[type="submit"]:hover {
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #007bff;
 }
